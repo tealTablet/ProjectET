@@ -8,7 +8,7 @@
 #include <ETGameState.generated.h>
 
 /**
- * 
+ * 맵이 로드되도 사라지지 않는다.
  */
 UCLASS()
 class PROJECTET_API AETGameState : public AGameStateBase
@@ -23,6 +23,4 @@ public:
 	//AuthorityGameMode //권한 없는 클라는 null
 	//PlayerList
 	//SpectorClass
-
-
 };

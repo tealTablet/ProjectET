@@ -25,6 +25,7 @@ public:
 	virtual void FinishDestroy() override;
 #pragma endregion
 #pragma region GameInstance
+
 	virtual void Init() override;
 
 	virtual void Shutdown() override;
@@ -32,9 +33,6 @@ public:
 	/** 월드가 변경될때 콜백*/
 	//virtual void OnWorldChanged(UWorld* OldWolrd, UWorld* NewWorld);
 #pragma endregion
-	UPROPERTY(EditAnywhere, BlueprintReadWrite) int Test;
-	UFUNCTION(BlueprintCallable) void DoTest() { PRINT_FUNCTION(); }
-	
 private:
 	//Singleton
 	UETGameInstance* GameInstance;
