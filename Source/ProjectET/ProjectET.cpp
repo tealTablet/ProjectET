@@ -1,10 +1,11 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+О╩©// Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "ProjectET.h"
 #include <Modules/ModuleManager.h>
 
-/** аъ╫и ╟тюс ╦П╣Б */
+/** Л╓▒Л▀╛ Й╡▄Л·└ К╙╗К⌠┬ */
 IMPLEMENT_PRIMARY_GAME_MODULE( FDefaultGameModuleImpl, ProjectET, "ProjectET" );
 
-/** ╣П╧Ж╠в©К ╥н╠в д╚ев╟М╦╝ а╓юг */
-DEFINE_LOG_CATEGORY(LOG_ET);
+/** К■■К╡└Й╥╦Л ╘ К║°Й╥╦ Л╧╢М┘▄ЙЁ═К╕╛ Л═∙Л²≤ */
+DEFINE_LOG_CATEGORY(ET_TEST);
+DEFINE_LOG_CATEGORY(ET_MSG);

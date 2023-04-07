@@ -3,9 +3,9 @@
 
 #include "GameInstance/ETGameInstance.h"
 
-
 UETGameInstance::UETGameInstance()
 {
+	
 	//PRINT_FUNCTION();
 }
 void UETGameInstance::PostInitProperties()
@@ -86,10 +86,10 @@ void UETGameInstance::FinishDestroy()
 * UObjectBase -> UObjectBaseUtility -> UObject -> UHierarchyObject
 *								상속     상속
 *				 UActorComponent 포함> AActor -> AHierarchyActor
-* 시작
+* 시작시
 * GameInstance->GameMode->World->Actor->Component
 * 
-* UWorld <포함 Actor						
+* UWorld <포함 Actor
 *  ㄴ>Pawn 포함> Controller	<------생성-----GameMode
 *
 * TSubclassOf<ParentClass> X;
@@ -157,6 +157,7 @@ virtual void Rename(const  const TCHAR* NewName, UObject* NewOuter, ERenameFlags
 
 
 #pragma endregion
+
 #pragma region AActor
 /** ///////////////////////////////////////////////////////////////////////////////
 * AActor virtual 함수
@@ -213,7 +214,8 @@ virtual void Destroyed() override;
 */ ////////////////////////////////////////////////////////////////////////////////
 
 #pragma endregion
-#pragma region ActorComponent
+
+#pragma region UActorComponent
 /** ///////////////////////////////////////////////////////////////////////////////
 *  ActorComponent virtual 함수
 */ ////////////////////////////////////////////////////////////////////////////////
@@ -239,6 +241,7 @@ virtual void Shutdown() override;
 //UEngine, UWorld, ALocal
 
 #pragma endregion
+
 #pragma region AGameModeBase
 /** ///////////////////////////////////////////////////////////////////////////////
 *  AGameModeBase virtual 함수
@@ -251,23 +254,28 @@ virtual void Shutdown() override;
 */ ////////////////////////////////////////////////////////////////////////////////
 #pragma endregion
 
-#pragma region APlayerController
-/** ///////////////////////////////////////////////////////////////////////////////
-* APlayerContoller virtual 함수
-*/ ////////////////////////////////////////////////////////////////////////////////
-
-#pragma endregion
 #pragma region APlayerState
 /** ///////////////////////////////////////////////////////////////////////////////
 * APlayerState virtual 함수
 */ ////////////////////////////////////////////////////////////////////////////////
 
 #pragma endregion
-#pragma region AIController
+
+#pragma region APlayerController
+/** ///////////////////////////////////////////////////////////////////////////////
+* APlayerContoller virtual 함수
+*/ ////////////////////////////////////////////////////////////////////////////////
+
+#pragma endregion
+#pragma region AAIController
 /** ///////////////////////////////////////////////////////////////////////////////
 * AIController virtual 함수
 */ ////////////////////////////////////////////////////////////////////////////////
 #pragma endregion
+#pragma region AController
+
+#pragma endregion
+
 
 
 #pragma region X
@@ -280,21 +288,6 @@ virtual void Shutdown() override;
 */ ////////////////////////////////////////////////////////////////////////////////
 #pragma endregion
 
-/**
-* 솔루션에서 UE5를 열어보면, 5가지 디렉토리가 있다.
-* 각각 Config, Platform, Plugin, Shader, Source 로 나뉘어 있는데,
-* 중요한건 Source와 Plugin이다. (나머지는 엔진,모듈의 기본 구성정보, 특정 플랫폼전용, 셰이더다. 신경쓰지 말자)
-* Source를 보면 5가지 디렉토리가 있다.(PlugIn도 신경쓰지 말자. Source를 이해하면 플러그인은 자동 이해다.)
-*
-* 각각 Developer, Editor, Programs, Runtime, ThirdParty로 나뉘어 있는데,
-* 중요한건 Developer, Editor, Runtime이다.(나머지는 언리얼프로그램(헤더툴 등), 써드파티다. 신경쓰지말자.)
-*
-* Developer에 있는 모듈들은 개발에만 필요한 모듈. 릴리즈에서는 제외 (기능적인 모듈들)
-* Editor에 있는 모듈들은 에디터 제작에 특화된 모듈. (툴)
-* Runtime에 있는 모듈들은 게임에 사용되는 필수모듈. (Core, CoreUObject, Engine...) 고로 사실상 개발에도 필수적이다.
-*
-* 모듈의 기능의 재사용성과 확장 초점, 플러그인 새로운 기능의 추가 초점
-*/
 
 
 
@@ -308,5 +301,16 @@ virtual void Shutdown() override;
 //EInternalObjectFlags
 //EEnumFlags
 
+//Pawn <-> Controller
+//Controller->AIController, PlayerController
+//Pawn->Character
 
 
+/*블루 프린트 그래프에서 정의하는 것은 이벤트의 처리 혹은 함수(다른 곳에서 호출할)
+일반적으로 로직은 이벤트로부터 실행
+호출자▷  ▷호출
+입력  ○  ○출력
+
+ConstructClass
+NewObject
+*/

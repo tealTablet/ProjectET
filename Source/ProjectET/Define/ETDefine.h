@@ -37,10 +37,11 @@
 /** 디버그용 전역 로그구조체 선언
 * ProjectET.cpp파일에 선언됨
 */
-DECLARE_LOG_CATEGORY_EXTERN(LOG_ET, Log, All)
+DECLARE_LOG_CATEGORY_EXTERN(ET_TEST, Log, All)
+DECLARE_LOG_CATEGORY_EXTERN(ET_MSG, Log, All)
 /** 귀찮은 테스트 로그 이걸로*/
-#define PRINT_LOG(str)		UE_LOG(LOG_ET, Warning, TEXT(str))
-#define PRINT_FUNCTION()	UE_LOG(LOG_ET, Warning, TEXT("%s"), __FUNCTIONW__)
+#define PRINT_LOG(Str)		UE_LOG(ET_TEST, Warning, TEXT(Str))
+#define PRINT_FUNCTION()	UE_LOG(ET_TEST, Warning, TEXT("%s"), __FUNCTIONW__)
 
 #pragma endregion
 #pragma region TypeDefine
@@ -50,10 +51,10 @@ DECLARE_LOG_CATEGORY_EXTERN(LOG_ET, Log, All)
 
 #pragma endregion
 #pragma region EnumClass_Enum
-/** Enum Table Autio Generated. */
+/** Enum Table Auto Generated. */
 //#include "ETEnumTable.h"
 
 #pragma endregion
-#pragma region ForWardDeclaration
+#pragma region ForwardDeclaration
 
 #pragma endregion
