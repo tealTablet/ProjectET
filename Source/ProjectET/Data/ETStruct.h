@@ -2,16 +2,10 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
+#include <CoreMinimal.h>
+#include "ProjectET.h"
+#include "ETEnum.h"
 #include "ETStruct.generated.h"
-
-
-UENUM(BlueprintType)
-enum class EExampleEnum :uint8
-{
-	None,
-	Test
-};
 
 USTRUCT(BlueprintType)
 struct PROJECTET_API FETStruct
@@ -24,9 +18,8 @@ struct PROJECTET_API FETStruct
 	UPROPERTY(BlueprintReadWrite) TArray<int32> ArrayIntger;
 	UPROPERTY(BlueprintReadWrite) TArray<float> ArrayFloat;
 	UPROPERTY(BlueprintReadWrite) TMap<int32,float> MapIF;
-	UPROPERTY(BlueprintReadWrite) EExampleEnum Enum;
-
-
+	UPROPERTY(BlueprintReadWrite) EETEnumClass Enum;
+	UPROPERTY(BlueprintReadWrite,Meta=(Bitmask, BitmaskEnum ="EETEnumBitflags")) int32 EnumFlags;
 	GENERATED_USTRUCT_BODY()
 public:
 	FETStruct() {}

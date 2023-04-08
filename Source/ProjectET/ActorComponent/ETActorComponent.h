@@ -16,9 +16,7 @@ class PROJECTET_API UETActorComponent : public UActorComponent
 public:	
 	UETActorComponent();
 
-protected:
 	virtual void BeginPlay() override;
 
-public:	
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 };

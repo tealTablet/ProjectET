@@ -5,10 +5,17 @@
 #include <CoreMinimal.h>
 #include "ProjectET.h"
 #include <UObject/NoExportTypes.h>
-#include <ETObject.generated.h>
+#include "ETObject.generated.h"
 
 /**
- * 
+ * UObject란 메모리 관리 받는 클래스입니다.
+ * CDO(Class Default Object)
+ * Refection
+ * Gabage Collection
+ * Serialization
+ * Delegate
+ * Replication
+ * Editor Integration
  */
 UCLASS()
 class PROJECTET_API UETObject : public UObject
@@ -17,15 +24,13 @@ class PROJECTET_API UETObject : public UObject
 
 public:
 	/** 일반적인 C++ 생성자: 프로그램 실행시에 CDO(Class Default Object)를 생성하기 위해 단한번 호출됩니다.
-	* 이후에는 의해 다른 생성자로 생성되기 때문에 호출되지 않습니다.
+	* 이후에는 팩토리 메서드로 생성되기 때문에 호출되지 않습니다.
 	*/
 	UETObject();
-
 	/** 멤버속성들을 초기화한 후에 호출됩니다.*/
 	virtual void PostInitProperties() override;
 
-	/** CDO로부터 초기화된 경우 호출됩니다. Called after properties are overwritten, including after subobjects initialization from a CDO.
-	* This could be called multiple times during an object lifetime, which is not the case for PostInitProperties which is expected to be called only once.*/
+	/** CDO로부터 초기화된 경우 호출됩니다.*/
 	virtual void PostReinitProperties() override;
 
 	/** 개체를 파괴하기 전에 호출됩니다. 이것은 객체를 파괴하기로 결정하는 즉시 호출되어 객체가 작업을 시작할 수 있도록 합니다. */

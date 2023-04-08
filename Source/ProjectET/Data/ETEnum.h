@@ -2,18 +2,35 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
-#include "ETEnum.generated.h"
+#include <CoreMinimal.h>
+#include "ProjectET.h"
 
 /**
  * 
  */
-
-UCLASS()
-class PROJECTET_API UETEnum : public UObject
+UENUM()
+enum class EETEnumClass : uint8
 {
-	GENERATED_BODY()
-public:
-	
+	None,
+	One,
 };
+
+UENUM()
+enum EETEnum
+{
+	None,
+	One,
+};
+
+//UPROPERY(EditAnywhere, Meta = (Bitmask))
+//int32 EnumFlags; //비트마스크형식으로 
+
+//커스터마이징한 플래그 이름을 만들려면
+UENUM(Meta = (Bitflags))
+enum class EETEnumBitflag : uint8
+{
+	None,
+	One,
+};
+//UPROPERTY(EditAnywhere,Meta=(Bitmask, BitmaskEnum ="EETEnumBitflags"))
+//int32 EnumFlags;

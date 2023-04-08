@@ -39,25 +39,24 @@ void UETGameInstance::FinishDestroy()
 
 /**
 * 클래스의 기본형태
-
+* ETEnum		: 열거형
 * ETStruct		: 네이티브
 * ETInterface	: 인터페이스
-*
 *
 * ETObject		: 가비지컬렉터
 * ETActor		: 월드에 배치가능한
 * ETPawn		: 빙의가 가능한
-* ETCharacater	: 완성형
+* ETCharacater	: 무브먼트 가능한
 *
-* ETGameInstance:
-* ETGameMode	:
-* ETGameState	:
-* ETPlayerController
-* ETPlayerState
-* ETHUD
-* ETSpectator
+* ETGameInstance: 
+* ETGameMode	: 
+* ETGameState	: 
+* ETPlayerController: 
+* ETPlayerState :
+* ETHUD			:
+* ETSpectator	:
 *
-* ETActorComponent : UObject다. 월드에 배치가 불가능하므로
+* ETActorComponent : UObject다. 월드에 배치가 불가능함.
 *
 * ETBluePrintFunctionLibrary
 * ETGameUserSettings
@@ -65,13 +64,13 @@ void UETGameInstance::FinishDestroy()
 * ETWorldSetting
 * ETLevelScriptActor
 *
-* ETSingleton
-* ETObjectPool
-* ETEvent
-* ETStateMachine
-*
-* ETCameraActor
-* ETDecalActor
+* ETSingleton	:
+* ETObjectPool	:
+* ETEvent		:
+* ETStateMachine:
+* ETCameraManager:
+* ETCameraActor	:
+* ETDecalActor	:
 */
 
 

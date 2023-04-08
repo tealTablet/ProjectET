@@ -1,4 +1,4 @@
-﻿{
+{
 	"FileVersion": 3,
 	"EngineAssociation": "5.1",
 	"Category": "",
@@ -10,7 +10,8 @@
 			"LoadingPhase": "Default",
 			"AdditionalDependencies": [
 				"CoreUObject",
-				"AIModule"
+				"AIModule",
+				"Engine"
 			]
 		}
 	],
@@ -79,6 +80,7 @@
 		}
 	],
 	"TargetPlatforms": [
-		"Windows"
+		"Windows",
+		"HoloLens"
 	]
 }

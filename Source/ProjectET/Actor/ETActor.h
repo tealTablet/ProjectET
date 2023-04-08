@@ -4,7 +4,6 @@
 
 #include <CoreMinimal.h>
 #include "ProjectET.h"
-#include "Data/ETStruct.h"
 #include <GameFramework/Actor.h>
 #include <ETActor.generated.h>
 
@@ -12,12 +11,10 @@ UCLASS()
 class PROJECTET_API AETActor : public AActor
 {
 	GENERATED_BODY()
-	
-public:	
-	AETActor();
-	UPROPERTY(BlueprintReadWrite)
-	FETStruct MyETStruct;
 
+public:
+	AETActor();
+	
 	virtual void OnConstruction(const FTransform& Transform) override;
 
 	virtual void BeginPlay() override;
@@ -27,4 +24,5 @@ public:
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 
 	virtual void Destroyed() override;
+
 };
