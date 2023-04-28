@@ -8,14 +8,14 @@
 /**
  * 
  */
-UENUM()
+UENUM(BlueprintType)
 enum class EETEnumClass : uint8
 {
-	None,
+	None, UMETA(DisplayName ="ChangeName")
 	One,
 };
 
-UENUM()
+UENUM(BlueprintType)
 enum EETEnum
 {
 	None,
@@ -26,7 +26,7 @@ enum EETEnum
 //int32 EnumFlags; //비트마스크형식으로 
 
 //커스터마이징한 플래그 이름을 만들려면
-UENUM(Meta = (Bitflags))
+UENUM(BlueprintType, Meta = (Bitflags))
 enum class EETEnumBitflag : uint8
 {
 	None,

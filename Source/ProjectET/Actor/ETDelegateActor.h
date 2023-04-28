@@ -8,7 +8,7 @@
 #include "ETDelegateActor.generated.h"
 
 DECLARE_DELEGATE(FOnExampleDelegate)
-DECLARE_DELEGATE_OneParam(FOnExampleOnParamDelegate, int)
+DECLARE_DELEGATE_OneParam(FOnExampleOnParamDelegate, int32)
 //DECLARE_MULTICAST_DELEGATE();
 //DECLARE_DYNAMIC_DELEGATE();
 //DECLARE_MULTICAST_DELEGATE();
@@ -25,6 +25,12 @@ public:
 	FOnExampleDelegate OnExample;
 
 	UFUNCTION(BlueprintCallable)
-		virtual void HandleExampleEvent() { OnExample.ExecuteIfBound(); }
+	virtual void HandleExampleEvent() { OnExample.ExecuteIfBound(); }
 	virtual void NotifyActorBeginOverlap(AActor* OtherActor) { HandleExampleEvent(); }
+
+	DECLARE_EVENT(AETDelegateActor, FOnExampleEvent);
+	DECLARE_EVENT_OneParam(AETDelegateActor, FOnExampleOnParamEvent, int32);
+
+	FOnExampleEvent OnExampleEvent;
+	FOnExampleOnParamEvent OnExampleOneParamEvent;
 };

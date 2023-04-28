@@ -15,5 +15,5 @@ class PROJECTET_API UETUserWidget : public UUserWidget
 {
 	GENERATED_BODY()
 public:
-
+	
 };

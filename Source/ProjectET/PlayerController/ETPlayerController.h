@@ -15,5 +15,5 @@ class PROJECTET_API AETPlayerController : public APlayerController
 {
 	GENERATED_BODY()
 public:
-
+	
 };

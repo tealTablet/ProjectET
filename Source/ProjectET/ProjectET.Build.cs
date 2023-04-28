@@ -30,6 +30,16 @@ public class ProjectET : ModuleRules
 			
 			"Networking",//TCP,UDP
 			"Sockets",//Socket
+			"HTTP",//HTTP
+
+			// LevelSequence
+			// "MovieScene",
+			// "LevelSequence",
+			// "ActorSequence",
+			// "Paper2D",
+			// "CinematicCamera",
+			// "MovieSceneTracks",
+			// "MediaAssets",
 		});
 		PrivateDependencyModuleNames.AddRange(new string[] {
 			"Slate",

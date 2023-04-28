@@ -5,7 +5,7 @@
 #include <CoreMinimal.h>
 #include "ProjectET.h"
 #include <GameFramework/Actor.h>
-#include <ETActor.generated.h>
+#include "ETActor.generated.h"
 
 UCLASS()
 class PROJECTET_API AETActor : public AActor
@@ -25,4 +25,5 @@ public:
 
 	virtual void Destroyed() override;
 
+	
 };

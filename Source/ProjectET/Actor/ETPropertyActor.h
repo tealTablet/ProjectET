@@ -46,7 +46,14 @@ public:
 	* Edit로 하면 클래스 자체를 수정가능해짐
 	*/
 
-	/** 다이나믹 멀티캐스트 델리게이트 전용*/
+	/** 다이나믹 멀티캐스트 델리게이트 전용
+	* 블루프린트에서 할당가능
+	*/
+	UPROPERTY(BlueprintAssignable)
+	FTestProepertyDelegate OnBlueprintAssignable;
+	/** 다이나믹 멀티캐스트 델리게이트 전용
+	* 블루프린트에서 호출가능
+	*/
 	UPROPERTY(BlueprintCallable)
 	FTestProepertyDelegate OnBlueprintCallable;
 
@@ -82,9 +89,6 @@ public:
 	/***/
 	UPROPERTY(EditFixedSize)
 	int32 IntEditFixedSize;
-	/** 다이나믹 멀티캐스트 델리게이트 전용*/
-	UPROPERTY(BlueprintAssignable)
-	FTestProepertyDelegate OnBlueprintAssignable;
 	/** 다이나믹 멀티캐스트 델리게이트 전용*/
 	UPROPERTY(BlueprintAuthorityOnly)
 	FTestProepertyDelegate OnBlueprintAuthorityOnly;
